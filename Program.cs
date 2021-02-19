@@ -1,48 +1,35 @@
 ﻿using System;
 
-namespace ConsoleApp2
+namespace ConsoleApp3
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Kurs kurs1 = new Kurs();
-            kurs1.KursAdi = "Java";
-            kurs1.Egitmen = "Şeyma Korkmaz";
-            kurs1.IzlenmeOrani = 68;
-
-            Kurs kurs2 = new Kurs();
-            kurs2.KursAdi = "C#";
-            kurs2.Egitmen = "Ali Korkmaz";
-            kurs2.IzlenmeOrani = 58;
-
-            Kurs kurs3 = new Kurs();
-            kurs3.KursAdi = "Pyhton";
-            kurs3.Egitmen = "Ayşe Korkmaz";
-            kurs3.IzlenmeOrani = 23;
-            // Console.WriteLine(kurs1.KursAdi + " :" + kurs1.Egitmen);
-            Kurs[] kurslar = new Kurs[] { kurs1, kurs2, kurs3 };
-            foreach(var kurs in kurslar)
+            string[] meyveler = new string[] {
+            };
+            Product urun1 = new Product();
+            urun1.Adi = "Elma";
+            urun1.Fiyati = 50;
+            Product urun2 = new Product();
+            urun2.Adi = "armut";
+            urun2.Fiyati = 60;
+            Product[] urunler = new Product[] { urun1, urun2 };
+        foreach(var product in urunler)
             {
-                Console.WriteLine(kurs.KursAdi+ " "+ kurs.Egitmen);
-            }
-           
-            for (int i=0; i<kurslar.Length; i++)
-            {
-                Console.WriteLine(kurslar[i].KursAdi);
-            }
-            int x = 0;
-            while(x<kurslar.Length){
-                Console.WriteLine(kurslar[x].KursAdi + " " + kurslar[x].Egitmen);
-                x++;
+                Console.WriteLine(product.Adi + "" + product.Fiyati);
 
             }
+            Console.WriteLine("--------methodlar----------");
+            Sepet sepet = new Sepet();
+            sepet.Ekle(urun1);
+            sepet.Ekle(urun2);
+            sepet.Ekle2("armut",50);
+
+
+
+
+
         }
-    }
-    class Kurs {
-        public string KursAdi {get;set;}
-        public string Egitmen { get; set; }
-        public int IzlenmeOrani { get; set; }
-
     }
 }
